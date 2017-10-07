@@ -498,7 +498,7 @@ public class Api {
 
 		} else {
 
-			return character + repeat(msg, character, times - 1, infinite);
+			return character + repeat(msg, character, times, infinite);
 
 		}
 
