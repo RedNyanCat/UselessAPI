@@ -473,18 +473,52 @@ public class Api {
 				primed = true;
 
 			} else {
-				
+
 				primed = false;
-				
+
 			}
 
 		} else {
-			
+
 			primed = false;
-			
+
 		}
 
 		return primed;
+
+	}
+
+	public static String repeat(String msg, char character, int times, boolean infinite){
+
+		if(infinite == false){
+
+			if(times == 0){return msg;}
+
+			return character + repeat(msg, character, times - 1, infinite);
+
+		} else {
+
+			return character + repeat(msg, character, times - 1, infinite);
+
+		}
+
+	}
+
+	public static boolean particles(Location center, Particle particleEffect, int radius){
+
+		try{
+
+			center.getWorld().spawnParticle(particleEffect, center, radius);
+
+			return true;
+
+		} catch(NullPointerException e) {
+			
+			e.printStackTrace();
+			
+			return false;
+			
+		}
 
 	}
 
