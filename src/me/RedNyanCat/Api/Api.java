@@ -521,5 +521,54 @@ public class Api {
 		}
 
 	}
+	
+	public static boolean teleportPlayer(Location loc, UUID player){
+		
+		if((player != null) || (loc != null)){
+			
+			Player p = Bukkit.getServer().getPlayer(player);
+			
+			p.teleport(loc);
+			
+			return true;
+			
+		} else {
+			
+			return false;
+			
+		}
+		
+	}
+	
+	public static boolean nickName(UUID player, String nickname){
+		
+		Player p = Bukkit.getServer().getPlayer(player);
+		
+		p.setDisplayName(nickname);
+		p.setPlayerListName(nickname);
+		
+		return true;
+		
+	}
+	
+	public static boolean setExp(UUID player, float amount){
+		
+		Player p = Bukkit.getServer().getPlayer(player);
+		
+		p.setExp(amount);
+		
+		return false;
+		
+	}
+	
+	public static boolean setLevel(UUID player, int amount){
+		
+		Player p = Bukkit.getServer().getPlayer(player);
+		
+		p.setLevel(amount);
+		
+		return false;
+		
+	}
 
 }
